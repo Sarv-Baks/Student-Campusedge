@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../static"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../instance"
+		},
+		{
+			"path": "../flask_session"
+		},
+		{
+			"path": "../env"
+		},
+		{
+			"path": "../__pycache__"
+		},
+		{
+			"path": "../.git"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "static"
+	}
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Student Profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+
+   <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+ 
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+         <p>Welcome, Admin 😄</p>
+      </h3>
+      <a href="/adminprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="/adminm"><i class="fas fa-home"></i><span>home</span></a>
+      <!-- <a href="/aboutt"><i class="fas fa-question"></i><span>about</span></a> -->
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+    </div>
+
+
+
+
+    <head>
+        <style>
+             body {
+                font-size: 21px;
+                 font-family: Arial, sans-serif;
+                 font-style: normal;
+             }
+     
+             h1 {
+                 font-size: 36px;
+             }
+     
+             table {
+                 width: 100%;
+                 border-collapse: collapse;
+             }
+     
+             th, td {
+                 border: 1px solid black;
+                 padding: 12px;
+                 text-align: left;
+             }
+     
+             th {
+                 background-color: #9a3737;
+             }
+     
+             tr:nth-child(even) {
+                 background-color: #cb9d6e;
+             }
+     
+             tr:hover {
+                 background-color: 		#C4A484;
+             }
+         </style>
+     </head>
+     
+     <body>
+         <h1>Student Profiles</h1>
+     
+         <table>
+             <thead>
+                 <tr>
+                     <th>First Name</th>
+                     <th>Last Name</th>
+                     <th>Mobile Number</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {% for signup in signups %}
+                 <tr>
+                     <td>{{ signup.firstname | upper }}</td>
+                     <td>{{ signup.lastname | upper  }}</td>
+                     <td>{{ signup.mob | lower }}</td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+     </body>
+     
+ </body>
+ </html>
+
+ 
+
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+
+   
+</body>
+</html>

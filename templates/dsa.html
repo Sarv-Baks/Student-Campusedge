@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Campus Edge</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+
+   <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+         <!-- {% if 'user_firstname' in session and 'user_lastname' in session %}
+         <p>{{ session['user_firstname'] }} {{ session['user_lastname'] }}😄</p>
+     {% elif 'admin' in session %}
+         {% if 'admin_firstname' in session and 'admin_lastname' in session %}
+             <p>{{ session['admin_firstname'] }} {{ session['admin_lastname'] }}😄</p>
+         {% else %}
+             <p>Welcome, Admin!</p>
+         {% endif %}
+     {% else %}
+         <p>Welcome, Guest!</p>
+     {% endif %} -->
+
+     {% if 'user_firstname' in session  %}
+     <p>{{ session['user_firstname'] }} 😄</p>
+ {% elif 'admin' in session %}
+     {% if 'admin_firstname' in session %}
+         <p>{{ session['admin_firstname'] }} 😄</p>
+     {% else %}
+         <p>Welcome, Admin!</p>
+     {% endif %}
+ {% else %}
+     <p>Welcome, Guest!</p>
+ {% endif %}
+      </h3>
+      <a href="/studentprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+
+   <h1 class="heading">DSA Questions</h1>
+
+   <div class="row">
+
+      <div class="column">
+         <!-- <form action="" method="post" class="save-playlist">
+            <button type="submit"><i class="far fa-bookmark"></i> <span>save playlist</span></button>
+         </form> -->
+   
+         <div class="thumb">
+            <img src="static\course_image\dsaa.png" alt="">
+            <span>9 videos</span>
+         </div>
+      </div>
+   
+         <div class="details">
+            <h1>DSA Questions</h1>
+            <p><h1>DSA Questions are the most Important part of placement, in this we provide you the most Important dsa questions which were asked by the mnc compaanies such as mircosoft, amazon , google, and checks the cognitive ability of these candidates.</h1></p>
+         </div>
+      </div>
+   </div>
+
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">playlist videos</h1>
+
+   <div class="box-container">
+
+      <a class="box" href="/array">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\array.jpeg" alt="">
+         <h3>Arrays</h3>
+      </a>
+
+      <a class="box" href="/string">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\string.jpeg" alt="">
+         <h3>Strings</h3>
+      </a>
+
+      <a class="box" href="/dp">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\dp.jpeg" alt="">
+         <h3>Dynamic Programming</h3>
+      </a>
+
+      <a class="box" href="/aarraayy">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\2darray.jpeg" alt="">
+         <h3>2D Arrays</h3>
+      </a>
+
+      <a class="box" href="/searching">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\searching.png" alt="">
+         <h3>Searching and Sorting</h3>
+      </a>
+
+      <a class="box" href="/backtracking">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking.png" alt="">
+         <h3>Backtracking</h3>
+      </a>
+<!-- 
+      <a class="box" href="https://www.youtube.com/embed/OKSJDDAyqP0?si=07uyxoEThGH3DtiL">
+        <i class="fas fa-play"></i>
+        <img src="static\course_image\linkedlist.jpeg" alt="">
+        <h3>Linked List</h3>
+     </a>
+
+
+     <a class="box" href="https://www.youtube.com/embed/OKSJDDAyqP0?si=07uyxoEThGH3DtiL">
+        <i class="fas fa-play"></i>
+        <img src="static\course_image\stack.png" alt="">
+        <h3>Stacks & Queues</h3>
+     </a>
+
+
+     <a class="box" href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">
+        <i class="fas fa-play"></i>
+        <img src="static\course_image\trees.jpeg" alt="">
+        <h3>Binary Trees</h3>
+     </a> -->
+
+
+   </div>
+
+</section>
+
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+   
+</body>
+</html>

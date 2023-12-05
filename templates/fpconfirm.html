@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Edge for T&P</title>
+    <link rel="stylesheet" type="text/css" href="static\css\fpconfirm.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+
+</head>
+<body>
+    <img class="wave" src="static\mgmm.jpg">
+    <div class="container">
+        <div class="img">
+            <img src="">
+        </div>
+        <div class="login-content">
+            <form action="/fpconfirm" method="post">
+                <img src="static\avatar.svg">
+                <h2 class="title">Forget Password</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Reset Token</h5>
+                        <input type="text" class="input" name="reset_token" id="reset_token" required>
+                    </div>
+                </div>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>New Password</h5>
+                        <input type="password" class="input" name="npassword" id="npassword" required>
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Confirm Password</h5>
+                        <input type="password" class="input" name="upassword" id="upassword" required>
+                   </div>
+                </div>
+                
+                <button style="margin-left:0px ;" type="submit" class="btn btn-outline-info">Change Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include your JavaScript files and other necessary scripts here -->
+    <script type="text/javascript" src="static\js\main.js"></script>
+</body>
+</html>

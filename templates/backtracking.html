@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Campus Edge</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   
+   <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+         <!-- {% if 'user_firstname' in session and 'user_lastname' in session %}
+         <p>{{ session['user_firstname'] }} {{ session['user_lastname'] }} 😄</p>
+         {% endif %} -->
+         {% if 'user_firstname' in session  %}
+         <p>{{ session['user_firstname'] }} 😄</p>
+     {% elif 'admin' in session %}
+         {% if 'admin_firstname' in session %}
+             <p>{{ session['admin_firstname'] }} 😄</p>
+         {% else %}
+             <p>Welcome, Admin!</p>
+         {% endif %}
+     {% else %}
+         <p>Welcome, Guest!</p>
+     {% endif %}
+      </h3>
+      <a href="/studentprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <!-- <a href="/sample"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>about</span></a> -->
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+
+   <h1 class="heading">Backtracking Questions</h1>
+
+   <div class="row">
+
+
+         <div class="details">
+            <h1>Backtracking</h1>
+            <p><h1>Backtracking is an algorithmic technique whose goal is to use brute force to find all solutions to a problem. It entails gradually compiling a set of all possible solutions. Because a problem will have constraints, solutions that do not meet them will be removed.
+            </h1></p>
+         </div>
+      </div>
+   </div>
+
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">playlist videos</h1>
+
+   <div class="box-container">
+
+      <a class="box" href="https://www.geeksforgeeks.org/combinational-sum/">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>combinational sum (easy)</h3>
+         <h3>Adobe, Amazon, Microsoft</h3>
+
+      </a>
+
+      <a class="box" href="https://www.hackerrank.com/challenges/crossword-puzzle/problem">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>crossword puzzle (easy)</h3>
+         <h3>Microsoft
+        </h3>
+      </a>
+
+      <a class="box" href="https://practice.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>solve the sudoku (easy)</h3>
+         <h3> Flipkart, MakeMyTrip </h3>
+      </a>
+
+      <a class="box" href="https://www.geeksforgeeks.org/backtracking-set-1-the-knights-tour-problem/">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>the knights tour problem (medium)</h3>
+         <h3>IBM</h3>
+
+      </a>
+
+      <a class="box" href="https://www.geeksforgeeks.org/remove-invalid-parentheses/">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>remove invalid parentheses (medium)</h3>
+         <h3>Uber
+        </h3>      </a>
+
+      <a class="box" href="https://www.geeksforgeeks.org/tug-of-war/">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\backtracking1.jpeg" alt="">
+         <h3>tug of war (medium)</h3>
+         <h3>Google</h3>      
+        </a>
+
+      <a class="box" href="https://www.hackerrank.com/challenges/arithmetic-expressions/problem">
+        <i class="fas fa-play"></i>
+        <img src="static\course_image\backtracking1.jpeg" alt="">
+        <h3>arithmetic expressions (hard)</h3>
+         <h3>Flipkart</h3>    
+       </a>
+
+
+
+
+   </div>
+
+</section>
+
+<!-- <footer class="footer">
+
+   Copyright All Rights Reserved by <span> Campus Edge for T&P 2023</span>
+
+</footer> -->
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+   
+</body>
+</html>

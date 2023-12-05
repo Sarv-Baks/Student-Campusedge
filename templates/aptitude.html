@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Campus Edge</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <div id="toggle-btn" class="fas fa-sun"></div>
+     </div>
+
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+         {% if 'user_firstname' in session  %}
+         <p>{{ session['user_firstname'] }} 😄</p>
+     {% elif 'admin' in session %}
+         {% if 'admin_firstname' in session %}
+             <p>{{ session['admin_firstname'] }} 😄</p>
+         {% else %}
+             <p>Welcome, Admin!</p>
+         {% endif %}
+     {% else %}
+         <p>Welcome, Guest!</p>
+     {% endif %}
+      </h3>
+      <a href="/studentprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+   <div class="details-container"> <!-- Added wrapping element for course details -->
+       <h1 class="heading">Aptitude</h1>
+       <div class="row">
+           <div class="column">
+            <!-- Modify your "Mark as Complete" button and add the timer display element -->
+            <form class="save-playlist">
+                <button id="markCompletedBtn" class="mark-as-completed-btn">
+                    <i class="far fa-check-circle"></i> <span>Mark as Completed</span>
+                    <div id="timer"></div>
+
+                </button>
+            </form>
+               <div class="thumb">
+                   <img src="static\course_image\Maths.png" alt="">
+                   <span>6 videos</span>
+               </div>
+           </div>
+           <div class="details">
+               <h1>Apptitude</h1>
+               <p>
+                   <h1>The basic aptitude test is a measure of the innate intelligence of an individual. This test
+                       is designed for entry-level executives and office staff, and checks the cognitive ability of these candidates.</h1>
+               </p>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">playlist videos</h1>
+
+   <div class="box-container">
+
+      <a class="box" href="https://www.youtube.com/embed/RWdNhJWwzSs?si=e4dd6DkrMdNFOq4X">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\percentage.png" alt="">
+         <h3 id="moduleTitle">Percentage 01</h3>
+       </a>
+
+      <a class="box" href="https://www.youtube.com/embed/T2odvmxqi1I?si=NKI0WoTlP9pTZqXc">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\profit.jpg" alt="">
+         <h3>Profit & Loss 02</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/78b4Jn4rw44?si=V7x8z85wQYXo0dh7">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\train.jpg" alt="">
+         <h3>Problem on Train 03</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/ETiRE7N7pEI?si=r2H-idMFG2NPegdN">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\permu.png" alt="">
+         <h3>Permutation & Combination 04</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/ximxxERGSUc?si=ZJQH6rcma8KMVYC6">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\Probability.png" alt="">
+         <h3>Probability 05</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/OKSJDDAyqP0?si=07uyxoEThGH3DtiL">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\Mixture.jpg" alt="">
+         <h3>Mixtures & Alligations 06</h3>
+      </a>
+
+   </div>
+
+</section>
+
+
+
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+<!-- <a class="box" href="https://www.youtube.com/embed/RWdNhJWwzSs?si=e4dd6DkrMdNFOq4X" onclick="startTimer()">
+    <i class="fas fa-play"></i>
+    <img src="static\course_image\percentage.png" alt="">
+    <h3 id="moduleTitle">Percentage 01</h3>
+    <div id="timer"></div>
+ </a>
+  -->
+ <script>
+ // Set the duration of the timer in seconds (2 minutes)
+ let duration = 10;
+ let timer;
+ 
+ // Function to start the timer
+ function startTimer() {
+     timer = setInterval(function() {
+         duration--;
+         updateTimerDisplay();
+ 
+         // When the timer is complete
+         if (duration <= 0) {
+             clearInterval(timer);
+             addGreenTick(); // Call the function to add a green tick after the timer is complete
+         }
+     }, 1000);
+ }
+ 
+ // Function to update the timer display
+ function updateTimerDisplay() {
+     const minutes = Math.floor(duration / 60);
+     const seconds = duration % 60;
+     document.getElementById('timer').textContent = `Time Remaining: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+ }
+ 
+ // Function to add a green tick after the timer is complete
+ function addGreenTick() {
+     const moduleTitle = document.getElementById('moduleTitle');
+     moduleTitle.innerHTML += '<i class="fas fa-check-circle" style="color: green;"></i>';
+ }
+ </script>
+ 
+
+
+<!-- <script>
+    let timer;
+    let duration = 10; // 1 hour in seconds
+    let isCompleted = false;
+    
+    function startTimer() {
+        timer = setInterval(function() {
+            duration--;
+            updateTimerDisplay();
+    
+            if (duration <= 0 && !isCompleted) {
+                clearInterval(timer);
+                disableMarkCompleteButton();
+            }
+        }, 1000);
+    }
+    
+    function updateTimerDisplay() {
+        const hours = Math.floor(duration / 3600);
+        const minutes = Math.floor((duration % 3600) / 60);
+        const seconds = duration % 60;
+        document.getElementById('timer').textContent = `Time Remaining: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+    
+    function disableMarkCompleteButton() {
+        const markCompleteBtn = document.getElementById('markCompletedBtn');
+        markCompleteBtn.disabled = true;
+        markCompleteBtn.innerHTML = '<i class="far fa-check-circle"></i> Completed';
+    }
+    
+    document.getElementById('markCompletedBtn').addEventListener('click', function(event) {
+        if (duration <= 0) {
+            isCompleted = true; // Set the flag to prevent timer reset after completion
+            // Perform your completion logic here, e.g., send a request to mark the course as completed
+            // ...
+        } else {
+            alert('Please wait for the timer to expire before marking as complete.');
+            event.preventDefault(); // Prevent the button click event if the timer is not expired
+        }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        startTimer(); // Start the timer when the page is loaded
+    });
+    </script> -->
+
+<!-- Call the JavaScript functions when the page is loaded -->
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        startTimer(); // Start the timer when the page is loaded
+    });
+    </script> -->
+   
+</body>
+</html>
+
+
+<!-- 
+<script>
+   const markCompletedBtn = document.getElementById('markCompletedBtn');
+
+   markCompletedBtn.addEventListener('click', function() {
+       // Disable the button to prevent multiple submissions
+       markCompletedBtn.disabled = true;
+
+       fetch('/mark_completed', {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({
+               course_id: 'aptitude_course_id', // Replace with the actual course ID
+           }),
+       })
+       .then(response => response.json())
+       .then(data => {
+           if (data.success) {
+               alert('Course marked as completed!');
+               // Update button text after marking the course as completed
+               markCompletedBtn.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+               // Add the completed class to the parent element of course details
+               document.querySelector('.details-container').classList.add('completed');
+           } else {
+               alert('Failed to mark course as completed.');
+               // Re-enable the button in case of failure
+               markCompletedBtn.disabled = false;
+           }
+       })
+       .catch(error => {
+           console.error('Error:', error);
+           // Re-enable the button in case of an error
+           markCompletedBtn.disabled = false;
+       });
+   });
+</script> -->
+
+
+<!-- custom js file link 
+<script>
+    document.getElementById('save-playlist').addEventListener('courseName', function (event) {
+        event.preventDefault();
+    
+        // Get form data
+        const courseName = document.getElementById('courseName').value;
+    
+        // Send the form data to the server (Assuming you are using fetch API)
+        fetch('/track_course', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                courseName: 'Aptitude',
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Course added successfully!');
+            } else {
+                alert('Failed to add course. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    </script> -->

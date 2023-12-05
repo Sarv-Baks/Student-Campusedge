@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your head content here -->
+</head>
+
+<body>
+    <h1>Student Profiles</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for signup in signups %}
+            <tr>
+                <td>{{ signup.firstname | upper }}</td>
+                <td>{{ signup.lastname | upper  }}</td>
+                <td>{{ signup.email | lower }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

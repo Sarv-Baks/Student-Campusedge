@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="static\css\admin2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Courses</h1>
+        <form id="course-form">
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" required>
+            <label for="section">Section:</label>
+            <select id="section" name="section">
+                <option value="english">English Aptitude</option>
+                <option value="coding">Coding</option>
+            </select>
+            <button type="submit">Add Course</button>
+        </form>
+    </div>
+
+    <script src="static\js\admin2.js"></script>
+</body>
+
+</html>

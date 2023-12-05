@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Student Profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+
+   <link rel="shortcut icon" href="static\images\logo.jpg" type="image/svg+xml">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <div id="toggle-btn" class="fas fa-sun"></div>
+     </div>
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+        {% if 'user_firstname' in session and 'user_lastname' in session %}
+        <p>{{ session['user_firstname'] }} {{ session['user_lastname'] }}😄</p>
+    {% elif 'admin' in session %}
+        {% if 'admin_firstname' in session and 'admin_lastname' in session %}
+            <p>{{ session['admin_firstname'] }} {{ session['admin_lastname'] }}😄</p>
+        {% else %}
+            <p>Welcome, Admin!</p>
+        {% endif %}
+    {% else %}
+        <p>Welcome, Guest!</p>
+    {% endif %}
+      </h3>
+      <a href="/studentprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="/sample"><i class="fas fa-home"></i><span>home</span></a>
+      <!-- <a href="/aboutt"><i class="fas fa-question"></i><span>about</span></a> -->
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+</div>
+
+
+
+<section class="user-profile">
+
+   <h1 class="heading">your profile</h1>
+
+   <div class="info">
+
+      <div class="user">
+         <img src="static\course_image\pic-1.jpg" alt="">
+         
+         <h3 class="name">                  
+            {% if 'user_firstname' in session and 'user_lastname' in session %}
+                <p>Hello {{ session['user_firstname'] }} {{ session['user_lastname'] }}😄</p>
+
+            {% endif %}
+          </h3>
+
+         <p>Student JNEC</p>
+      </div>
+   
+      <div class="box-container">
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-bookmark"></i>
+               <div>
+                  <span>5</span>
+                  <p>Total Courses</p>
+               </div>
+            </div>
+            <a href="/findcourse" class="inline-btn">View Courses</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-heart"></i>
+               <div>
+                  <span>111</span>
+                  <p>Total Topics</p>
+               </div>
+            </div>
+            <a href="/findcourse" class="inline-btn">View Topics</a>
+         </div>
+         <br>
+         
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-comment"></i>
+               <div>
+                  <span>84</span>
+                  <p>Most imp DSA Questions</p>
+               </div>
+            </div>
+            <a href="/dsa" class="inline-btn">View Questions</a>
+         </div>
+
+         
+   
+      </div>
+   </div>
+
+</section>
+
+ 
+
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+
+   
+</body>
+</html>

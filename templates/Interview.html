@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Campus Edge</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static\css\course.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a class="logo">Campus Edge</a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="static\course_image\pic-1.jpg" class="image" alt="">
+      <h3 class="name">                  
+         {% if 'user_firstname' in session  %}
+         <p>{{ session['user_firstname'] }} 😄</p>
+     {% elif 'admin' in session %}
+         {% if 'admin_firstname' in session %}
+             <p>{{ session['admin_firstname'] }} 😄</p>
+         {% else %}
+             <p>Welcome, Admin!</p>
+         {% endif %}
+     {% else %}
+         <p>Welcome, Guest!</p>
+     {% endif %}
+      </h3>
+      <a href="/studentprofile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+
+      <a href="/findcourse"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="/logout"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+
+   <h1 class="heading">Intreview Preperation</h1>
+
+   <div class="row">
+
+      <div class="column">
+         <!-- <form action="" method="post" class="save-playlist">
+            <button type="submit"><i class="far fa-bookmark"></i> <span>save playlist</span></button>
+         </form> -->
+   
+         <div class="thumb">
+            <img src="static\course_image\interview.jpeg" alt="">
+            <span>9 videos</span>
+         </div>
+      </div>
+   
+         <div class="details">
+            <h1>Interview</h1>
+            <p><h1>In this course, participants will learn: the interview tips and tricks that would help you for next interview</h1></p>
+         </div>
+      </div>
+   </div>
+
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">Playlist Videos</h1>
+
+   <div class="box-container">
+
+      <a class="box" href="https://www.youtube.com/embed/EzGH3hZuJVk?si=Xbx4YzOBJMPd84K9">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Tell me about Yourself</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/ZxYv61_wH00?si=uGf_3XUmTI0qpRMe">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Speak Fluent in Interview</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/hasloamb29o?si=fPQmLfgwqxlcupuM">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>What are your Strength?</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/drFIDUbDmq0?si=GVeHKU6vj0Z-Itwk">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Why should we hire you?</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/R2KltLS41oU?si=4H4XMo9lxw0zYXGw">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Why you want to join us?</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/uhDLHn6uVUg?si=lONS6TTQNXSW7-45">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Star technique to answer in interview</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/EenMiF1QDuI?si=-ZqT9Xjg5Y1umqUF">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Question for interviewer</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/_ws95v3yC94?si=4odod2CJQdzQwGtA">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Tips to create resume</h3>
+      </a>
+
+      <a class="box" href="https://www.youtube.com/embed/x7OSb4lKQbM?si=B2T_RDT92tuogLT6">
+         <i class="fas fa-play"></i>
+         <img src="static\course_image\interview.jpeg" alt="">
+         <h3>Mistakes to avoid in resume</h3>
+      </a>
+
+   </div>
+
+</section>
+
+
+<!-- custom js file link  -->
+<script src="static\js\Course.js"></script>
+
+   
+</body>
+</html>

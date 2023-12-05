@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quiz Management</title>
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="static\css\quiz.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <section class="flex">
+            <a class="logo">Campus Edge Admin</a>
+            <div class="icons">
+                <div id="logout-btn" class="fas fa-sign-out"></div>
+            </div>
+        </section>
+    </header>
+
+    <div class="admin-content">
+        <h1 class="heading">Quiz Management</h1>
+        <div class="quiz-form">
+            <form action="/add-quiz" method="post">
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" required></textarea>
+
+                <label for="option1">Option 1:</label>
+                <input type="text" id="option1" name="option1" required>
+
+                <label for="option2">Option 2:</label>
+                <input type="text" id="option2" name="option2" required>
+
+                <label for="option3">Option 3:</label>
+                <input type="text" id="option3" name="option3" required>
+
+                <label for="option4">Option 4:</label>
+                <input type="text" id="option4" name="option4" required>
+
+                <label for="correctAnswer">Correct Answer (Option Number):</label>
+                <input type="number" id="correctAnswer" name="correctAnswer" min="1" max="4" required>
+
+                <button href = "/admin/quiz" type="submit">Add Question</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="static\js\quiz.js"></script>
+
+</body>
+
+</html>
